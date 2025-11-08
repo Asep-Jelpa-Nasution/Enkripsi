@@ -2,47 +2,74 @@
 <html lang="id">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
     <title>Cipher Lengkap + Steganografi</title>
 
-    <!-- Styles -->
+    <!-- CSS -->
     <link rel="stylesheet" href="assets/css/style.css" />
   </head>
 
   <body>
     <div class="wrap">
-      <h1>🔐 Caesar • Vigenère • Cipher Sendiri + 🖼️ Steganografi</h1>
+      <h1>🔐JelpaDev</h1>
 
       <!-- Caesar -->
-      <section id="caesarSection"></section>
+      <section>
+        <h2>1️⃣ Caesar Cipher</h2>
+        <input id="caesarText" placeholder="Masukkan teks..." />
+        <input id="caesarShift" type="number" placeholder="Shift (misal: 3)" />
+        <button id="btnCaesarEnc">Enkripsi</button>
+        <button id="btnCaesarDec">Dekripsi</button>
+        <div class="output" id="caesarOutput"></div>
+      </section>
 
       <!-- Vigenere -->
-      <section id="vigenereSection"></section>
+      <section>
+        <h2>2️⃣ Vigenère Cipher</h2>
+        <input id="vigenereText" placeholder="Masukkan teks..." />
+        <input id="vigenereKey" placeholder="Kunci (misal: MONA)" />
+        <button id="btnVigEnc">Enkripsi</button>
+        <button id="btnVigDec">Dekripsi</button>
+        <div class="output" id="vigenereOutput"></div>
+      </section>
 
       <!-- Custom Cipher -->
-      <section id="customCipherSection"></section>
+      <section>
+        <h2>3️⃣ Cipher Buatan Sendiri (Angka & Morse Modifikasi)</h2>
+        <input id="customText" placeholder="Masukkan teks (misal: ASEP)" />
+        <button id="btnCustomEnc">Enkripsi</button>
+        <button id="btnCustomDec">Dekripsi</button>
+
+        <h4>🔢 Hasil Angka:</h4>
+        <div class="output" id="customNumber"></div>
+
+        <h4>📡 Hasil Sandi (titik & garis):</h4>
+        <div class="output" id="customMorse"></div>
+      </section>
 
       <!-- Steganografi -->
-      <section id="stegoSection"></section>
+      <section>
+        <h2>4️⃣ Steganografi — LSB Image</h2>
 
-      <div class="desc">
-        <b>📘 Penjelasan:</b>
-        <ul>
-          <li><b>Caesar Cipher:</b> Pergeseran huruf berdasarkan angka.</li>
-          <li>
-            <b>Vigenère Cipher:</b> Gunakan kata kunci untuk pergeseran huruf.
-          </li>
-          <li><b>Cipher Buatan Sendiri:</b> Huruf → angka → simbol.</li>
-          <li><b>Steganografi:</b> Menyembunyikan pesan di dalam gambar.</li>
-        </ul>
-      </div>
+        <label>Upload Gambar</label>
+        <input type="file" id="stegoFile" accept="image/*" />
+        <img id="stegoPreview" alt="preview" />
+
+        <label>Pesan</label>
+        <input id="stegoMsg" placeholder="Masukkan pesan..." />
+
+        <button id="hideMsg">Sisipkan Pesan</button>
+        <button id="extractMsg">Ekstrak Pesan</button>
+        <button id="downloadStego">Unduh Gambar</button>
+
+        <h4>📩 Hasil Ekstraksi:</h4>
+        <textarea id="extractedMsg" readonly></textarea>
+      </section>
     </div>
 
-    <!-- Scripts -->
-    <script src="assets/js/caesar.js"></script>
-    <script src="assets/js/vigenere.js"></script>
-    <script src="assets/js/customCipher.js"></script>
+    <!-- JS -->
+    <script src="assets/js/cipher.js"></script>
     <script src="assets/js/stego.js"></script>
-    <script src="assets/js/main.js"></script>
+    <script src="assets/js/app.js"></script>
   </body>
 </html>
